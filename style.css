@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100vw;
+  max-width: 1920px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background-color: grey;
+  position: sticky;
+  top: -100vh;
+}
+header {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), black), url(https://image.shutterstock.com/z/stock-photo-spring-landscape-with-takeoff-loon-misty-morning-bird-were-scattered-on-water-of-lake-in-misty-520190116.jpg);
+}
+
+.container {
+  position: sticky;
+  top: 0;
+  transform: translate(0, 100%);
+  z-index: 6;
+  width: 100%;
+}
+
+.ava {
+  background-image: url(https://image.shutterstock.com/z/stock-photo-side-view-closeup-of-beautiful-and-colorful-lorikeet-green-naped-bird-trichoglossus-haematodus-1482640220.jpg);
+  background-size: 200%;
+  aspect-ratio: 1/1;
+  width: 40vh;
+  max-width: 250px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10vh);
+}
+
+.logo {
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 60vh) scale(3);
+  font-size: 1.2rem;
+}
+.logo, .ul a {
+  color: white;
+}
+.ul {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, 80vh);
+}
+
+.ul {
+  display: flex;
+  list-style: none;
+  height: 45px;
+}
+
+.ul a {
+  text-decoration: none;
+}
+
+.ul a:hover {
+  background-color: black;
+  color: white;
+}
+
+.ul li {
+  padding: 0 1rem;
+}
+
+nav {
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 100%;
+  height: 45px;
+  width: 100%;
+  z-index: 5;
+}
+
+header, .page {
+  height: 100vh;
+}
+
+.page {
+  background-color: darkgray;
+  border-bottom: 1px solid white;
+}
