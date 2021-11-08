@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
   outline: 1px solid transparent;
 }
 
@@ -9,100 +10,283 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  display: flex;
-  justify-content: center;
+:root {
+  --vdark : #1F1D36;
+  --dark : #3F3351;
+  --light : #864879;
+  --vlight : #E9A6A6;
+  --max-h: 891px;
 }
 
-main {
+.bg-vdark {
+  background-color: var(--vdark);
+}
+.bg-dark {
+  background-color: var(--dark);
+}
+.bg-light {
+  background-color: var(--light);
+}
+.bg-vlight {
+  background-color: var(--vlight);
+}
+.vh100 {
+  height: 100vh;
+}
+.h100 {
+  height: 100%;
+}
+.mh100 {
+  min-height: 100vh;
+}
+.vw100 {
   width: 100vw;
-  max-width: 1920px;
+}
+.w100 {
+  width: 100%;
+}
+.w50 {
+  width: 50%;
+}
+.vw50 {
+  width: 50vw;
+}
+.limited-height {
+  max-height: var(--max-h);
 }
 
+
+.p1rem {
+  padding: 1rem;
+}
+/* -----------------------------
+--------library-----------------
+----------------------------- */
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+/* -----------------------------
+--------library-----------------
+----------------------------- */
+
+
+
+/*--------------------------------
+----------Customize Header--------
+--------------------------------*/
 
 header {
-  background-color: grey;
   position: sticky;
-  top: -100vh;
-}
-header {
-  background-image: linear-gradient(rgba(255, 255, 255, 0), black), url(https://image.shutterstock.com/z/stock-photo-spring-landscape-with-takeoff-loon-misty-morning-bird-were-scattered-on-water-of-lake-in-misty-520190116.jpg);
+  position: -webkit-sticky;
+  z-index: 2;
 }
 
-.container {
+header {
+  background-image: 
+    url(/img/mohammad-rahmani-IGiut6NQmxc-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#hanger {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   transform: translate(0, 100%);
   z-index: 6;
   width: 100%;
 }
 
-.ava {
-  background-image: url(https://image.shutterstock.com/z/stock-photo-side-view-closeup-of-beautiful-and-colorful-lorikeet-green-naped-bird-trichoglossus-haematodus-1482640220.jpg);
-  background-size: 200%;
-  aspect-ratio: 1/1;
-  width: 40vh;
-  max-width: 250px;
-  border-radius: 50%;
+nav {
+  height: 45px;
+  width: 100%;
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, 10vh);
+  top: 100%;
+  opacity: .85;
+}
+/*--------------------------------
+---------customize avatar----------
+---------------------------------*/
+#ava {
+  background-image: 
+    url(https://image.shutterstock.com/z/stock-photo-side-view-closeup-of-beautiful-and-colorful-lorikeet-green-naped-bird-trichoglossus-haematodus-1482640220.jpg);
+  background-size: 150%;
 }
 
-.logo {
+#ava {
+  max-width: 250px;
+  max-height: 250px;
+  position: absolute;
+  left: 50%;
+  /* transform: translate(-50%, 5vh); */
+  border-radius: 50%;
+  z-index: 4;
+}
+
+/*--------------------------------
+---------customize logo----------
+---------------------------------*/
+#logo {
   height: 45px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 60vh) scale(3);
+  /* transform: translate(-50%, 53vh) scale(3); */
   font-size: 1.2rem;
 }
-.logo, .ul a {
-  color: white;
-}
-.ul {
+
+/*--------------------------------
+---------customize list menu----------
+---------------------------------*/
+#ul, .btnmenu {
   position: absolute;
   right: 50%;
-  transform: translate(50%, 80vh);
+  /* transform: translate(50%, 65vh); */
 }
 
-.ul {
-  display: flex;
+#ul {
   list-style: none;
   height: 45px;
 }
 
-.ul a {
+#ul a {
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.ul a:hover {
-  background-color: black;
-  color: white;
+#ul a:hover, .btnmenu:hover {
+  /* background-color: var(--light); */
+  cursor: pointer;
+}
+#ul a:active, .btnmenu:active {
+  background-color: var(--light);
 }
 
-.ul li {
+#ul li {
   padding: 0 1rem;
 }
 
-nav {
-  background-color: rgb(0, 0, 0);
+/*--------------------------------
+---------customize menu buton----------
+---------------------------------*/
+#btnmenu {
+  display: none;
   position: absolute;
-  top: 100%;
   height: 45px;
-  width: 100%;
-  z-index: 5;
+  font-size: 1.2rem;
+  padding: 0 1rem;
 }
 
-header, .page {
-  height: 100vh;
+/* ----------------------------
+-------demo-------
+------------------------------- */
+
+
+
+
+
+/* ----------------------------
+-------about me-------
+------------------------------- */
+#aboutme {
+  padding-top: 45px;
 }
 
-.page {
-  background-color: darkgray;
-  border-bottom: 1px solid white;
+#skills {
+  /* grid-template-columns: repeat( auto-fit, minmax(340px, 1fr) ); */
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 3rem;
+}
+
+.tile {
+  background-color: var(--light);
+  min-height: 320px;
+  transform: scale(0);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ----------------------
+------------slider-page ------------
+----------------------*/
+.slider-page {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  #skills {
+    /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
+    padding: 1rem;
+  }
+  .slider-page {
+    grid-template-columns: 1fr;
+  }
+  #left-panel {
+    height: 90px !important;
+  }
+}
+
+/* @media (min-width: 1200px){
+  .skills {
+    grid-template-columns: repeat( auto-fit, minmax(380px, 1fr) );
+  }
+} */
+
+@media (max-width: 480px) {
+  #skills {
+    grid-template-columns: 1fr;
+  }
+  #ul li {
+    padding: 0 .5rem;
+  }
+  #ava {
+    max-height: 200px;
+    max-width: 200px;
+  }
+
+  .hide {
+    display: none !important;
+  }
+  .show {
+    display: flex !important;
+  }
+  .expand {
+    display: fixed !important;
+    top: 45px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto !important;
+    flex-direction: column;
+  }
+  .adjust {
+    width: 100% !important;
+    height: 45px !important;
+    display: flex !important;
+    justify-content: center !important;
+    background-color: var(--vdark);
+    opacity: .85;
+  }
 }
