@@ -120,12 +120,13 @@ $("#btnmenu").click(function(){
 //---------------------------------------------
 // make animation slider on section
 //---------------------------------------------
-
+const tile = $(".tile");
+const tileContainer = $(".tile-container");
 for(let i = 0; i < 6; i++){
-  gsap.to(`#tile${i}`,{
+  gsap.to(tile[i],{
     transform: "scale(1)",
     scrollTrigger: {
-      trigger: `#tile-container${i}`,
+      trigger: tileContainer[i],
       start: "top 100%",
       end: "top 60%",
       scrub: 1,
@@ -147,6 +148,26 @@ gsap.to("#left-panel", {
   }
 })
 
-// $("body").click(function(){
-//   alert(headerHeight);
-// })
+const slider = $(".slider");
+const sliderContainer = $(".slider-container");
+for (let k=0; k<7; k++){
+  gsap.to(slider[k], {
+    transform: "translateX(0)",
+    scrollTrigger: {
+      trigger: sliderContainer[k],
+      start: "top 100%",
+      end: "top 60%",
+      scrub: 1,
+      markers: true,
+    }
+});
+}
+
+
+//   // $(`.slider:eq(${k})`).css("transform", "translateX(0) scale(0.5)" );
+//   // console.log(k);
+// }
+
+// $(".slider:eq(5)").css("transform", "translate(0)");
+
+// slider[1].style.transform = "translateX(0)";

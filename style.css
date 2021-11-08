@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
-  outline: 1px solid transparent;
+  outline: 1px solid red;
 }
 
 html {
@@ -58,6 +58,9 @@ html {
 
 .p1rem {
   padding: 1rem;
+}
+.m1rem {
+  margin: 1rem;
 }
 /* -----------------------------
 --------library-----------------
@@ -210,6 +213,7 @@ nav {
 /* ----------------------------
 -------about me-------
 ------------------------------- */
+
 #aboutme {
   padding-top: 45px;
 }
@@ -234,6 +238,12 @@ nav {
 ----------------------*/
 .slider-page {
   grid-template-columns: 1fr 1fr;
+}
+
+.slider {
+  width: 80%;
+  min-height: 200px;
+  transform: translateX(-100px) scale(1);
 }
 
 @media (max-width: 768px) {
