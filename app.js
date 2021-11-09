@@ -93,12 +93,14 @@ window.onscroll = function(){
         $("#ul").addClass("hide");
       }
       $("#btnmenu").addClass("show");
+      $("nav").css("height", "45px");
     }
   else {
     $("#ul").removeClass("hide");
     $("#btnmenu").removeClass("show");
     $("#ul a").removeClass("adjust");
     $("#ul").removeClass("expand");
+    $("nav").css("height", "0");
   }
 }
 
