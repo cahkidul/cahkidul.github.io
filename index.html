@@ -5,6 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <title>Aliyu Arba</title>
 </head>
@@ -69,34 +74,37 @@
     --------page 3---------
   ------------------------ -->
     <section id="page3" class="slider-page grid">
-      <div id="left-panel" class="vh100 w100 limited-height bg-vdark flex-center">Left panel</div>
+      <div id="left-panel" class="vh100 w100 limited-height bg-vdark flex-center hidden-overflow">
+        <h2 class="absolute-center">Hello</h2>
+        <div id="round-animate" class="bg-dark rounded"></div>
+      </div>
 
       <div id="slides" class="w100">
 
-        <div id="slide" class="bg-vdark p1rem" style="padding-top: 10rem;">
+        <div class="bg-vdark p1rem hidden-overflow" style="padding-top: 5rem;">
           <div class="slider-container">
-            <div class="slider bg-vlight m1rem"></div>
+            <div class="slider bg-vlight"></div>
           </div>
           <div class="slider-container">
-            <div class="slider bg-vlight m1rem"></div>
+            <div class="slider bg-vlight"></div>
           </div>
           <div class="slider-container">
-            <div class="slider bg-vlight m1rem"></div>
-          </div>
-        </div>
-
-        <div id="slide2" class="bg-light p1rem">
-          <div class="slider-container">
-            <div class="slider bg-vlight m1rem"></div>
+            <div class="slider bg-vlight"></div>
           </div>
         </div>
 
-        <div id="slide3" class="bg-dark p1rem">
+        <div class="bg-light p1rem hidden-overflow">
           <div class="slider-container">
-            <div class="slider bg-vlight m1rem"></div>
+            <div class="slider bg-vlight"></div>
+          </div>
+        </div>
+
+        <div class="mh100 bg-dark p1rem hidden-overflow">
+          <div class="slider-container">
+            <div class="slider bg-vlight"></div>
           </div>
           <div class="slider-container">
-            <div class="slider bg-vlight m1rem"></div>
+            <div class="slider bg-vlight"></div>
           </div>
         </div>
       </div>

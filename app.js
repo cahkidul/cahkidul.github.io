@@ -118,7 +118,7 @@ $("#btnmenu").click(function(){
 
 
 //---------------------------------------------
-// make animation slider on section
+// make animation tile on section
 //---------------------------------------------
 const tile = $(".tile");
 const tileContainer = $(".tile-container");
@@ -157,8 +157,8 @@ for (let k=0; k<7; k++){
       trigger: sliderContainer[k],
       start: "top 100%",
       end: "top 60%",
-      scrub: 1,
-      markers: true,
+      scrub: 2,
+      // markers: true,
     }
 });
 }
@@ -171,3 +171,16 @@ for (let k=0; k<7; k++){
 // $(".slider:eq(5)").css("transform", "translate(0)");
 
 // slider[1].style.transform = "translateX(0)";
+
+gsap.to("#round-animate", {
+  width: "100%",
+  height: "100%",
+  borderRadius: "0",
+  scrollTrigger: {
+    trigger: "#slides",
+    start: "top 0",
+    end: "bottom 100%",
+    scrub: 1,
+    // markers: true,
+  }
+})
