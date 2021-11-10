@@ -69,6 +69,9 @@ html {
 .hidden-overflow {
   overflow: hidden;
 }
+.relative {
+  position: relative;
+}
 /* -----------------------------
 --------library-----------------
 ----------------------------- */
@@ -102,9 +105,6 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* -----------------------------
---------library-----------------
------------------------------ */
 
 
 
@@ -220,25 +220,35 @@ nav {
 -------demo-------
 ------------------------------- */
 #left-demo {
-  width: 60%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
   padding: 1rem;
 }
 .text-container {
   max-width: 500px;
 }
 #right-demo {
-  width: 40%;
   height: 300vh;
 }
-.box-animation {
-  width: 100%;
-  height: 100vh;
-  transform: scale(0);
-  z-index: -10;
+#circle-animation {
+  width: 25vh;
+  height: 25vh;
+  background-color: var(--vlight);
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translate(-100%, -100%) scale(0);
+  border-radius: 46% 32%;
+  z-index: -3;
+  /* animation: spin 10s infinite linear; */
 }
-
-
-
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 
 /* ----------------------------
@@ -326,7 +336,7 @@ nav {
   }
 } */
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   #skills {
     grid-template-columns: 1fr;
   }

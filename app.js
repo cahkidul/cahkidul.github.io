@@ -93,18 +93,19 @@ window.onscroll = function(){
   const scrollpos2 = document.body.scrollTop;
   console.log(scrollpos);
   console.log(scrollpos2);
-  if ((scrollpos > hhh || scrollpos2 > hhh) &&
+  if ((scrollpos >= hhh || scrollpos2 >= hhh) &&
        $(window).width()<=768){
     $("#left-panel").css({
       "background-color": "#fff",
       "box-shadow": "0 1px 2px rgba(0, 0, 0, 0.2)",
   });
   }
-  else if (scrollpos > header || scrollpos2 > header){
+  else if (scrollpos >= header || scrollpos2 >= header){
       if($("#ul").hasClass("expand")===false){
         $("#ul").addClass("hide");
       }
       $("#btnmenu").addClass("show");
+      
       $("nav").css("height", "45px");
       $("#left-panel").css({
         "background-color": "transparent",
@@ -116,6 +117,7 @@ window.onscroll = function(){
     $("#btnmenu").removeClass("show");
     $("#ul a").removeClass("adjust");
     $("#ul").removeClass("expand");
+    
     $("nav").css("height", "0");
   }
 }
@@ -134,31 +136,25 @@ $("#btnmenu").click(function(){
   }
 })
 
-gsap.to(".box-animation", {
-  transform: "scale(1)",
-  scrollTrigger: {
-    trigger: "#right-demo",
+const bounce = gsap.timeline({scrollTrigger: {
+  trigger: "#demo",
     start: "top 0",
-    end: "bottom 110%",
-    pin: ".box-animation",
+    end: "bottom 120%",
     scrub: 1,
-    // markers: true,
-  }
-})
-gsap.to("#left-demo", {
-  transform: "scale(1)",
-  scrollTrigger: {
-    trigger: "#demo",
-    start: "top 0",
-    end: "bottom 100%",
-    pin: "#left-demo",
-    scrub: 1,
-    // markers: true,
-  }
-})
+    // markers: true 
+}})
+bounce.to("#circle-animation", {transform: "scale(10)"})
 
-
-
+// gsap.to("#circle-animation",{
+//   transform: "scale(2)",
+//   scrollTrigger: {
+//     trigger: "#demo",
+//     start: "top 0",
+//     end: "bottom 100%",
+//     scrub: 1,
+//     markers: true
+//   }
+// })
 
 //---------------------------------------------
 // make animation tile on section
