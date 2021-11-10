@@ -90,13 +90,16 @@ window.onscroll = function(){
   const aboutme = $("#aboutme").height();
   const hhh = header+demo+aboutme;
   const scrollpos = document.documentElement.scrollTop;
-  if (scrollpos >= hhh && $(window).width()<=720){
+  const scrollpos2 = document.body.scrollTop;
+  console.log(scrollpos);
+  console.log(scrollpos2);
+  if (scrollpos > hhh || scrollpos2 > hhh){
     $("#left-panel").css({
       "background-color": "#fff",
       "box-shadow": "0 1px 2px rgba(0, 0, 0, 0.2)",
   });
   }
-  else if (scrollpos >= header){
+  else if (scrollpos > header || scrollpos2 > header){
       if($("#ul").hasClass("expand")===false){
         $("#ul").addClass("hide");
       }
@@ -104,11 +107,9 @@ window.onscroll = function(){
       $("nav").css("height", "45px");
       $("#left-panel").css({
         "background-color": "transparent",
-        "box-shadow": "0 0 0 rgba(0, 0, 0, 0.2)",
-
-    });
+        "box-shadow": "0 0 0 rgba(0, 0, 0, 0)"
+      });
     }
-  
   else {
     $("#ul").removeClass("hide");
     $("#btnmenu").removeClass("show");
