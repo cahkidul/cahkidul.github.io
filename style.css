@@ -38,7 +38,7 @@ html {
   height: 100%;
 }
 .mh100 {
-  min-height: 100vh;
+  min-height: 100vh; 
 }
 .vw100 {
   width: 100vw;
@@ -115,7 +115,7 @@ html {
 header {
   position: sticky;
   position: -webkit-sticky;
-  z-index: 2;
+  z-index: 2000;
 }
 
 /* header {
@@ -140,6 +140,7 @@ nav {
   position: absolute;
   top: 100%;
   opacity: .90;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 /*--------------------------------
 ---------customize avatar----------
@@ -218,6 +219,23 @@ nav {
 /* ----------------------------
 -------demo-------
 ------------------------------- */
+#left-demo {
+  width: 60%;
+  padding: 1rem;
+}
+.text-container {
+  max-width: 500px;
+}
+#right-demo {
+  width: 40%;
+  height: 300vh;
+}
+.box-animation {
+  width: 100%;
+  height: 100vh;
+  transform: scale(0);
+  z-index: -10;
+}
 
 
 
@@ -244,6 +262,7 @@ nav {
   transform: scale(0);
   padding: 1rem;
   border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* ----------------------
@@ -253,31 +272,52 @@ nav {
   grid-template-columns: 1fr 1fr;
 }
 
+#left-panel {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .slider {
   width: 100%;
-  min-height: 100px;
+  min-height: 200px;
   transform: translateX(1000px) scale(1);
   margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #round-animate {
-  width: 0;
-  height: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
 }
 
 @media (max-width: 768px) {
   #skills {
     /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
     padding: 1rem;
+    padding-bottom: 3rem;
   }
   .slider-page {
     grid-template-columns: 1fr;
   }
-  #round-animate {
-    display: none;
-  }
   #left-panel {
-    height: 90px !important;
+    top: 45px;
+    height: 45px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  #round-animate {
+    display: none !important;
+  }
+
+  #demo {
+    flex-direction: column;
+  }
+  #left-demo {
+    width: 100%;
+  }
+  #right-demo {
+    width: 100%;
   }
 }
 

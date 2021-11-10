@@ -85,16 +85,25 @@ gsap.to("#ul, #btnmenu", {
 // make responsive menu on mobile viewport
 //---------------------------------------------
 window.onscroll = function(){
-  var vh = $("header").height();
-  var h = vh;
-  if (document.body.scrollTop >= h ||
-    document.documentElement.scrollTop >= h){
+  const header = $("header").height();
+  const demo = $("#demo").height();
+  const aboutme = $("#aboutme").height();
+  const hhh = header+demo+aboutme;
+  const scrollpos = document.documentElement.scrollTop;
+  if (scrollpos >= hhh && $(window).width()<=720){
+    $("#left-panel").css({
+      "background-color": "#fff"
+  });
+  }
+  else if (scrollpos >= header){
       if($("#ul").hasClass("expand")===false){
         $("#ul").addClass("hide");
       }
       $("#btnmenu").addClass("show");
       $("nav").css("height", "45px");
+      $("#left-panel").css("background-color", "transparent");
     }
+  
   else {
     $("#ul").removeClass("hide");
     $("#btnmenu").removeClass("show");
@@ -118,6 +127,31 @@ $("#btnmenu").click(function(){
   }
 })
 
+gsap.to(".box-animation", {
+  transform: "scale(1)",
+  scrollTrigger: {
+    trigger: "#right-demo",
+    start: "top 0",
+    end: "bottom 110%",
+    pin: ".box-animation",
+    scrub: 1,
+    // markers: true,
+  }
+})
+gsap.to("#left-demo", {
+  transform: "scale(1)",
+  scrollTrigger: {
+    trigger: "#demo",
+    start: "top 0",
+    end: "bottom 100%",
+    pin: "#left-demo",
+    scrub: 1,
+    // markers: true,
+  }
+})
+
+
+
 
 //---------------------------------------------
 // make animation tile on section
@@ -139,16 +173,33 @@ for(let i = 0; i < 6; i++){
 
 /* pinning left panel */
 
-gsap.to("#left-panel", {
+// window.onscroll = function(){
+//   const header = $("header").height();
+//   const demo = $("#demo").height();
+//   const aboutme = $("#aboutme").height();
+//   const hhh = header+demo+aboutme;
+//   const scrollpos = document.documentElement.scrollTop;
+//   console.log(hhh);
+//   console.log(scrollpos);
+//   if(scrollpos>hhh){
+//     $("#left-panel").css("background-color", "white");
+//   }
+//   else {
+//     $("#left-panel").css("background-color", "transparent");
+//   }
+// }
+
+gsap.to("#round-animate", {
+  transform: "scale(1)",
   scrollTrigger: {
-    trigger: "#slides",
-    start: "top 0",
-    end: `bottom ${$("#left-panel").height()}`,
-    pin: "#left-panel",
-    pinSpacing: false,
-    // markers: true,
+    trigger: "#page3",
+    start: "top 25%",
+    end: "bottom 100%",
+    scrub: .5,
+    // markers: true
   }
 })
+
 
 const slider = $(".slider");
 const sliderContainer = $(".slider-container");
@@ -159,30 +210,10 @@ for (let k=0; k<7; k++){
       trigger: sliderContainer[k],
       start: "top 100%",
       end: "top 60%",
-      scrub: 2,
+      scrub: 1,
       // markers: true,
     }
 });
 }
 
 
-//   // $(`.slider:eq(${k})`).css("transform", "translateX(0) scale(0.5)" );
-//   // console.log(k);
-// }
-
-// $(".slider:eq(5)").css("transform", "translate(0)");
-
-// slider[1].style.transform = "translateX(0)";
-
-gsap.to("#round-animate", {
-  width: "100%",
-  height: "100%",
-  borderRadius: "0",
-  scrollTrigger: {
-    trigger: "#slides",
-    start: "top 0",
-    end: "bottom 100%",
-    scrub: 1,
-    // markers: true,
-  }
-})
