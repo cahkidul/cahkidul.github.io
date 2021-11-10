@@ -93,7 +93,8 @@ window.onscroll = function(){
   const scrollpos2 = document.body.scrollTop;
   console.log(scrollpos);
   console.log(scrollpos2);
-  if (scrollpos > hhh || scrollpos2 > hhh){
+  if ((scrollpos > hhh || scrollpos2 > hhh) &&
+       $(window).width()<=768){
     $("#left-panel").css({
       "background-color": "#fff",
       "box-shadow": "0 1px 2px rgba(0, 0, 0, 0.2)",
