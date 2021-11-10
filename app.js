@@ -92,7 +92,8 @@ window.onscroll = function(){
   const scrollpos = document.documentElement.scrollTop;
   if (scrollpos >= hhh && $(window).width()<=720){
     $("#left-panel").css({
-      "background-color": "#fff"
+      "background-color": "#fff",
+      "box-shadow": "0 1px 2px rgba(0, 0, 0, 0.2)",
   });
   }
   else if (scrollpos >= header){
@@ -101,7 +102,11 @@ window.onscroll = function(){
       }
       $("#btnmenu").addClass("show");
       $("nav").css("height", "45px");
-      $("#left-panel").css("background-color", "transparent");
+      $("#left-panel").css({
+        "background-color": "transparent",
+        "box-shadow": "0 0 0 rgba(0, 0, 0, 0.2)",
+
+    });
     }
   
   else {
