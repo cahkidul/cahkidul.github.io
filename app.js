@@ -8,6 +8,7 @@ $("#btnmenu").click(function(){
     $("#line3").css({
       "transform": "translate(-50%, -50%)", 
       "top": "70%"});
+    $("#dark").removeClass("dark");
   }
   else {
     $("#line1").css({
@@ -18,6 +19,7 @@ $("#btnmenu").click(function(){
     $("#line3").css({
       "transform": "translate(-50%, -50%) rotate(-45deg)", 
       "top": "50%"});
+    $("#dark").addClass("dark");
   }
   if($("#menu").height()==0){
     $("#menu").addClass("show");
@@ -27,7 +29,7 @@ $("#btnmenu").click(function(){
   }
 })
 
-$("main").click(function(){
+$("#dark").click(function(){
   if($("#menu").is(":visible")){
     $("#menu").removeClass("show");
     $("#line1").css({
@@ -38,5 +40,6 @@ $("main").click(function(){
     $("#line3").css({
       "transform": "translate(-50%, -50%)", 
       "top": "70%"});
+    $(this).removeClass("dark");
   }
 })

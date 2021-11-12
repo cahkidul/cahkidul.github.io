@@ -29,6 +29,8 @@ $mainColor: #2F86A6;
 $secondColor: #34BE82;
 $thirdColor: #2FDD92;
 $aksenColor: #F2F013;
+$navColor: rgba(255, 255, 255, 0.95);
+$boxShadow: 0 1px 2px rgba(0, 0, 0, 0.250);
 
 nav {
   top: 0;
@@ -36,9 +38,9 @@ nav {
   width: 100%;
   padding: 0 1rem;
   font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.250);
-  transition: all 400ms ease;
+  background-color: $navColor;
+  box-shadow: $boxShadow;
+  transition: all 200ms ease;
   z-index: 100;
   #navbar {
     width: 100%;
@@ -101,6 +103,16 @@ nav {
   }
 }
 
+.dark {
+  position: fixed;
+  top: 180px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+}
+
 main {
   width: 100%;
   max-width: 1920px;
@@ -118,8 +130,21 @@ main {
     }
   }
   section {
-    height: 100vh;
-    max-height: 720px;
+    padding: 1rem;
+  }
+  #page2 {
+    h2 {
+      margin: 45px 0 1.2rem 0;
+    }
+    #icon-container {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+      grid-gap: 1.5rem;
+      .icon {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -132,19 +157,48 @@ main {
     height: 0;
     overflow: hidden;
     transition: all 500ms ease !important;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.250);
+    box-shadow: $boxShadow;
     ul {
       flex-direction: column !important;
       a {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        background-color: white;
+        border-top: 1px solid rgba(0, 0, 0, 0.250);
+        background-color: $navColor;
       }
     }
   }
   .show {
     height: 135px !important;
+  }
+  main {
+    #page2 {
+      padding: 1rem 0;
+      #icon-container {
+        width: 100%;
+        display: flex;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        grid-gap: 0;
+        .icon {
+          width: 120px;
+        }
+      }
+      #icon-container::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  main {
+    #page2 {
+      #icon-container {
+        .icon {
+          width: 80px;
+        }
+      }
+    }
   }
 }
 @media (min-width: 769px) {
