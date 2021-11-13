@@ -9,6 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: whitesmoke;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,6 +162,10 @@ main {
   max-width: 1920px;
 }
 
+main h2 {
+  margin: 3rem 0;
+}
+
 main header {
   height: 100vh;
   max-height: 720px;
@@ -178,12 +186,50 @@ main section {
   padding: 1rem;
 }
 
-main #page2 h2 {
-  margin: 45px 0 1.2rem 0;
+main #page1 {
+  margin-bottom: 5rem;
 }
 
-main #page2 #icon-container {
+main #page1 #project-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+main #page1 #project-container div {
+  width: 100%;
+  height: 200px;
+}
+
+main #page1 #project-container div #project {
+  background-color: #34BE82;
+  width: 100%;
+  height: 100%;
+}
+
+main #page2 {
+  margin-bottom: 5rem;
+}
+
+main #page2 #icon-box {
   width: 80%;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+main #page2 #icon-box h3 {
+  padding: 0 2rem;
+}
+
+main #page2 #icon-box #icon-container {
+  width: 100%;
+  padding: .5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
@@ -191,8 +237,13 @@ main #page2 #icon-container {
   grid-gap: 1.5rem;
 }
 
-main #page2 #icon-container .icon {
+main #page2 #icon-box #icon-container .icon {
   width: 100%;
+  aspect-ratio: 1/1;
+}
+
+main footer {
+  background-color: #2F86A6;
 }
 
 @media (max-width: 768px) {
@@ -225,7 +276,14 @@ main #page2 #icon-container .icon {
   main #page2 {
     padding: 1rem 0;
   }
-  main #page2 #icon-container {
+  main #page2 #icon-box {
+    width: 100%;
+  }
+  main #page2 #icon-box h3 {
+    margin-bottom: .5rem;
+  }
+  main #page2 #icon-box #icon-container {
+    padding: 0;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -235,16 +293,20 @@ main #page2 #icon-container .icon {
     scrollbar-width: none;
     grid-gap: 0;
   }
-  main #page2 #icon-container .icon {
-    width: 120px;
+  main #page2 #icon-box #icon-container .icon {
+    width: 100px;
   }
-  main #page2 #icon-container::-webkit-scrollbar {
+  main #page2 #icon-box #icon-container::-webkit-scrollbar {
     display: none;
   }
 }
 
 @media (max-width: 500px) {
-  main #page2 #icon-container .icon {
+  main #page1 #project-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  main #page2 #icon-box #icon-container .icon {
     width: 80px;
   }
 }
@@ -252,6 +314,10 @@ main #page2 #icon-container .icon {
 @media (min-width: 769px) {
   #btnmenu {
     display: none;
+  }
+  main #page1 #project-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 }
 /*# sourceMappingURL=style.css.map */
