@@ -166,13 +166,17 @@ main h2 {
   margin: 3rem 0;
 }
 
-main header {
+section {
+  padding: 1rem;
+}
+
+header {
   height: 100vh;
   max-height: 720px;
   overflow: hidden;
 }
 
-main header #blue-aksen {
+header #blue-aksen {
   width: 100vh;
   height: 100vh;
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
@@ -182,15 +186,11 @@ main header #blue-aksen {
   left: 100%;
 }
 
-main section {
-  padding: 1rem;
-}
-
-main #page1 {
+#page1 {
   margin-bottom: 5rem;
 }
 
-main #page1 #project-container {
+#page1 #project-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -199,22 +199,24 @@ main #page1 #project-container {
   width: 100%;
 }
 
-main #page1 #project-container div {
+#page1 #project-container div {
   width: 100%;
   height: 200px;
 }
 
-main #page1 #project-container div #project {
+#page1 #project-container div .project {
   background-color: #34BE82;
   width: 100%;
   height: 100%;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
 }
 
-main #page2 {
+#page2 {
   margin-bottom: 5rem;
 }
 
-main #page2 #icon-box {
+#page2 #icon-box {
   width: 80%;
   background-color: white;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
@@ -223,11 +225,11 @@ main #page2 #icon-box {
   padding: 1rem;
 }
 
-main #page2 #icon-box h3 {
+#page2 #icon-box h3 {
   padding: 0 2rem;
 }
 
-main #page2 #icon-box #icon-container {
+#page2 #icon-box #icon-container {
   width: 100%;
   padding: .5rem;
   display: -ms-grid;
@@ -237,12 +239,23 @@ main #page2 #icon-box #icon-container {
   grid-gap: 1.5rem;
 }
 
-main #page2 #icon-box #icon-container .icon {
+#page2 #icon-box #icon-container .icon {
   width: 100%;
   aspect-ratio: 1/1;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  position: relative;
 }
 
-main footer {
+.icon:hover {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.247));
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.247));
+  -webkit-transform: scale(1.1) !important;
+          transform: scale(1.1) !important;
+}
+
+footer {
   background-color: #2F86A6;
 }
 
@@ -273,41 +286,34 @@ main footer {
   .show {
     height: 135px !important;
   }
-  main #page2 {
+  #page2 {
     padding: 1rem 0;
   }
-  main #page2 #icon-box {
-    width: 100%;
+  #page2 #icon-box {
+    width: 95%;
   }
-  main #page2 #icon-box h3 {
+  #page2 #icon-box h3 {
     margin-bottom: .5rem;
   }
-  main #page2 #icon-box #icon-container {
-    padding: 0;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    grid-gap: 0;
+  #page2 #icon-box #icon-container {
+    padding: .5rem;
+    -ms-grid-columns: (minmax(80px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-gap: .5rem;
   }
-  main #page2 #icon-box #icon-container .icon {
-    width: 100px;
-  }
-  main #page2 #icon-box #icon-container::-webkit-scrollbar {
+  #page2 #icon-box #icon-container::-webkit-scrollbar {
     display: none;
   }
 }
 
 @media (max-width: 500px) {
-  main #page1 #project-container {
+  #page1 #project-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  main #page2 #icon-box #icon-container .icon {
-    width: 80px;
+  #page2 #icon-box #icon-container {
+    -ms-grid-columns: (minmax(60px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   }
 }
 
@@ -315,7 +321,7 @@ main footer {
   #btnmenu {
     display: none;
   }
-  main #page1 #project-container {
+  #page1 #project-container {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
   }

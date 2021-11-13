@@ -42,4 +42,32 @@ $("#dark").click(function(){
       "top": "70%"});
     $(this).removeClass("dark");
   }
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+for(let i=0; i<6; i++){
+  const project = $(".project");
+  const handler = $(".project-handler");
+  gsap.to(project[i], {
+    transform: "translate(0, 0)",
+    scrollTrigger: {
+      trigger: handler[i],
+      start: "top 100%",
+      end: "top 70%",
+      scrub: 1,
+      // markers: true,
+    }
+  })
+}
+
+gsap.to(".icon", {
+  transform: "scale(1)",
+  scrollTrigger: {
+    trigger: "#icon-box",
+    start: "top 90%",
+    end: "top 50%",
+    scrub: 1,
+    // markers: true,
+  }
 })
