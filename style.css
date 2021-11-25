@@ -1,1 +1,227 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ebebeb;
+  height: 100vh;
+}
+
+:root {
+  --navheight: 50px;
+}
+
+nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: var(--navheight);
+  overflow: hidden;
+  position: fixed;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.125);
+}
+
+.navbar {
+  background-color: #ffffff;
+  width: 100vw;
+  max-width: 1920px;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo, .menu ul, .menu ul a {
+  height: var(--navheight);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  padding: 0 1rem;
+}
+
+/* .menu {
+  transition: 100ms;
+} */
+.menu ul li {
+  margin: 0 1rem;
+}
+
+.menu ul a:hover {
+  background-color: black;
+  color: white;
+}
+
+.button {
+  height: var(--navheight);
+  aspect-ratio: 1;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.button span {
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  background-color: black;
+  border-radius: 10px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.button span:nth-child(1) {
+  width: 50%;
+  -webkit-transform: translateY(-400%);
+          transform: translateY(-400%);
+}
+
+.button span:nth-child(3) {
+  width: 40%;
+  -webkit-transform: translateY(400%);
+          transform: translateY(400%);
+}
+
+.button.active span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 70%;
+}
+
+.button.active span:nth-child(2) {
+  -webkit-transform: translateX(500%);
+          transform: translateX(500%);
+}
+
+.button.active span:nth-child(3) {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+  width: 70%;
+}
+
+.popUp {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.messages {
+  background-color: white;
+  width: 80%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+}
+
+.popUp.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.messages.active {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.close {
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: black;
+  width: 20px;
+  height: 2px;
+}
+
+.close span:nth-child(1) {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close span:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav {
+    height: auto;
+  }
+  .navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+  .menu {
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+  }
+  .menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .menu ul a {
+    width: 100%;
+  }
+  .menu.active {
+    height: 150px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
