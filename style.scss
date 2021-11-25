@@ -52,11 +52,11 @@ nav {
 }
 .button {
   height: var(--navheight);
-  aspect-ratio: 1;
+  width: var(--navheight);
   display: none;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   right: 1rem;
   cursor: pointer;
 }

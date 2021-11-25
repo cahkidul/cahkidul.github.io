@@ -73,7 +73,7 @@ nav {
 
 .button {
   height: var(--navheight);
-  aspect-ratio: 1;
+  width: var(--navheight);
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -81,7 +81,7 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: absolute;
+  position: fixed;
   right: 1rem;
   cursor: pointer;
 }
