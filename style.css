@@ -411,7 +411,7 @@ xclip
 -------------------------------- */
 .cd-headline.clip span {
   display: inline-block;
-  padding: .2em;
+  padding: .2em 2px;
   color: #ffffff;
   font-size: 26px;
 }
@@ -1413,10 +1413,11 @@ hr.invis1 {
 }
 
 .filter-button-group{
-	border: 1px solid #e4e4e4;
+/* 	border: 1px solid #e4e4e4; */
 	border-radius: 0px;
 	margin: 10px 0px;
 	display: inline-block;
+/* 	padding: 10px 0px; */
 }
 
 .filter-button-group button.active{
@@ -1436,6 +1437,7 @@ hr.invis1 {
 	padding: 12px 40px;
 	border: none;
 	border-radius: 0px;
+	margin: 5px 0px;
 }
 
 
