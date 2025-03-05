@@ -411,7 +411,7 @@ xclip
 -------------------------------- */
 .cd-headline.clip span {
   display: inline-block;
-  padding: .2em 2px;
+  padding: .2em 10px;
   color: #ffffff;
   font-size: 26px;
 }
